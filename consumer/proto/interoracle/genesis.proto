@@ -1,0 +1,17 @@
+syntax = "proto3";
+package maingockien01.consumer.interoracle;
+
+import "gogoproto/gogo.proto";
+import "interoracle/params.proto";
+import "interoracle/oracle_info.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/maingockien01/consumer/x/interoracle/types";
+
+// GenesisState defines the interoracle module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  string port_id = 2;
+  OracleInfo oracleInfo = 3;
+  // this line is used by starport scaffolding # genesis/proto/state
+}

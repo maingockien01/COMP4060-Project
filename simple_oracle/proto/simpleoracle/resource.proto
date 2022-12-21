@@ -1,0 +1,13 @@
+syntax = "proto3";
+package maingockien01.simple_oracle.simpleoracle;
+
+option go_package = "github.com/maingockien01/simple_oracle/x/simpleoracle/types";
+
+message Resource {
+  string index = 1; 
+  string path = 2; 
+  string value = 3; 
+  int32 lastUpdatedAt = 4; 
+  string creator = 5;
+}
+

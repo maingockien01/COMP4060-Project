@@ -1,0 +1,12 @@
+syntax = "proto3";
+package maingockien01.simple_oracle.simpleoracle;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/maingockien01/simple_oracle/x/simpleoracle/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package maingockien01.simple_oracle.simpleoracle;
+
+import "gogoproto/gogo.proto";
+import "simpleoracle/params.proto";
+import "simpleoracle/resource.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/maingockien01/simple_oracle/x/simpleoracle/types";
+
+// GenesisState defines the simpleoracle module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  repeated Resource resourceList = 2 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

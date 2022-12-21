@@ -1,0 +1,9 @@
+syntax = "proto3";
+package maingockien01.consumer.interoracle;
+
+option go_package = "github.com/maingockien01/consumer/x/interoracle/types";
+
+message OracleInfo {
+  uint64 requestSuccessNum = 1; 
+  string creator = 2;
+}

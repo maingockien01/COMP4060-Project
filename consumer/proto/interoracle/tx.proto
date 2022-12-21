@@ -1,0 +1,44 @@
+syntax = "proto3";
+package maingockien01.consumer.interoracle;
+
+import "interoracle/oracle_info.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/maingockien01/consumer/x/interoracle/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc SendRequestIndex(MsgSendRequestIndex) returns (MsgSendRequestIndexResponse);
+  rpc CreateOracleInfo(MsgCreateOracleInfo) returns (MsgCreateOracleInfoResponse);
+  rpc UpdateOracleInfo(MsgUpdateOracleInfo) returns (MsgUpdateOracleInfoResponse);
+  rpc DeleteOracleInfo(MsgDeleteOracleInfo) returns (MsgDeleteOracleInfoResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgSendRequestIndex {
+  string creator = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  string index = 5;
+}
+
+message MsgSendRequestIndexResponse {
+}
+message MsgCreateOracleInfo {
+  string creator = 1;
+  uint64 requestSuccessNum = 3;
+}
+message MsgCreateOracleInfoResponse {}
+
+message MsgUpdateOracleInfo {
+  string creator = 1;
+  uint64 requestSuccessNum = 3;
+}
+message MsgUpdateOracleInfoResponse {}
+
+message MsgDeleteOracleInfo {
+  string creator = 1;
+}
+message MsgDeleteOracleInfoResponse {}
+// this line is used by starport scaffolding # proto/tx/message

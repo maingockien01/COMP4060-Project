@@ -1,0 +1,41 @@
+syntax = "proto3";
+package maingockien01.simple_oracle.simpleoracle;
+
+import "simpleoracle/resource.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/maingockien01/simple_oracle/x/simpleoracle/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateResource(MsgCreateResource) returns (MsgCreateResourceResponse);
+  rpc UpdateResource(MsgUpdateResource) returns (MsgUpdateResourceResponse);
+  rpc DeleteResource(MsgDeleteResource) returns (MsgDeleteResourceResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateResource {
+  string creator = 1;
+  string index = 2;
+
+  string path = 3;
+  string value = 4;
+}
+message MsgCreateResourceResponse {}
+
+message MsgUpdateResource {
+  string creator = 1;
+  string index = 2;
+
+  string path = 3;
+  string value = 4;
+}
+message MsgUpdateResourceResponse {}
+
+message MsgDeleteResource {
+  string creator = 1;
+  string index = 2;
+}
+message MsgDeleteResourceResponse {}
+
+// this line is used by starport scaffolding # proto/tx/message
