@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  simple_oracle:
+    container_name: simple_oracle
+    image: "simple_oracle"
+
+    ports:
+      - "26657:26657"
+      - "1317:1317"
+      - "4500:4500"
+
+    networks:
+      - interoracle
+
+  consumer:
+    container_name: consumer
+    image: "consumer"
+
+    ports:
+      - "26658:26657"
+      - "1318:1317"
+      - "4501:4500"
+
+    networks:
+      - interoracle
+
+  relayer:
+    container_name: relayer
+    image: "relayer"
+    tty: true
+    stdin_open: true
+
+    networks:
+      - interoracle
+
+networks:
+    interoracle:

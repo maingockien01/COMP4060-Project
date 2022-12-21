@@ -1,0 +1,15 @@
+{
+        "src": {
+          "chain-id": "consumer",
+          "port-id": "interoracle",
+          "order": "unordered",
+          "version": "interoracle-1"
+        },
+        "dst": {
+          "chain-id": "simple_oracle",
+          "port-id": "interoracle",
+          "order": "unordered",
+          "version": "interoracle-1"
+        },
+        "strategy": { "type": "naive" }
+      }
